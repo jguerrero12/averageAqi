@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/averageAQI/static/css/main.eb78c449.css",
+    "main.js": "/averageAQI/static/js/main.6a53f288.js",
+    "static/js/787.48f0210d.chunk.js": "/averageAQI/static/js/787.48f0210d.chunk.js",
+    "service-worker.js": "/averageAQI/service-worker.js",
+    "index.html": "/averageAQI/index.html",
+    "main.eb78c449.css.map": "/averageAQI/static/css/main.eb78c449.css.map",
+    "main.6a53f288.js.map": "/averageAQI/static/js/main.6a53f288.js.map",
+    "787.48f0210d.chunk.js.map": "/averageAQI/static/js/787.48f0210d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb78c449.css",
+    "static/js/main.6a53f288.js"
+  ]
+}
