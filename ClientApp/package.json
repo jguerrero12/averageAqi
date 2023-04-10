@@ -2,7 +2,7 @@
   "name": "average-aqi-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jguerrero12.github.io/averageAQI/", 
+  "homepage": "https://jguerrero12.github.io/averageAqi/", 
   "dependencies": {
     "bootstrap": "^5.2.0",
     "gh-pages": "^5.0.0",
