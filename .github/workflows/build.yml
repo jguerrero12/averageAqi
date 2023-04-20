@@ -1,10 +1,10 @@
 name: average-aqi-cicd
 on:
   push:
-    branches: 
+    branches:
       - main
   pull_request:
-    branches: 
+    branches:
       - main
 jobs:
   # deploy-data-analyzer:
@@ -53,6 +53,9 @@ jobs:
   #         buildpack: https://github.com/jincod/dotnetcore-buildpack
   deploy-webapp:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: applications/webapp/test
     steps:
       - uses: actions/checkout@v3
       - name: Set up .NET
@@ -60,7 +63,7 @@ jobs:
         with:
           dotnet-version: 7.0.x
       - name: Restore dependencies
-        run: cd applications/webapp/test && dotnet restore
+        run: dotnet restore
       - name: Build
         run: dotnet build --no-restore
       - name: Test
