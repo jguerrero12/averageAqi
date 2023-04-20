@@ -60,7 +60,7 @@ jobs:
         with:
           dotnet-version: 7.0.x
       - name: Restore dependencies
-        run: cd applications/webapp && dotnet restore
+        run: cd applications/webapp/test && dotnet restore
       - name: Build
         run: dotnet build --no-restore
       - name: Test
