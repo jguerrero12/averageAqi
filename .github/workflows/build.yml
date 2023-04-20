@@ -76,4 +76,4 @@ jobs:
           heroku_app_name: ${{secrets.HEROKU_WEB_APP_NAME}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           buildpack: https://github.com/jincod/dotnetcore-buildpack
-          appdir: ../src
+          appdir: applications/webapp/src
