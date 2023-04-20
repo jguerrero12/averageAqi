@@ -51,7 +51,7 @@ jobs:
   #         heroku_app_name: ${{secrets.HEROKU_DATA_COLLECTOR_NAME}}
   #         heroku_email: ${{secrets.HEROKU_EMAIL}}
   #         buildpack: https://github.com/jincod/dotnetcore-buildpack
-  deploy-webapp:
+  test-and-deploy-webapp:
     runs-on: ubuntu-latest
     defaults:
       run:
