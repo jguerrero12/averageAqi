@@ -1,9 +1,11 @@
 name: average-aqi-cicd
 on:
   push:
-    branches: [$default-branch]
+    branches: 
+      - main
   pull_request:
-    branches: [$default-branch]
+    branches: 
+      - main
 jobs:
   # deploy-data-analyzer:
   #   runs-on: ubuntu-latest
