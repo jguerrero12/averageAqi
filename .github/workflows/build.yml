@@ -75,5 +75,6 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_WEB_APP_NAME}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
-          buildpack: https://github.com/jincod/dotnetcore-buildpack
+          usedocker: true
           appdir: applications/webapp/src
+          # healthcheck: "https://webapp-averageaqi.herokuapp.com//health"
