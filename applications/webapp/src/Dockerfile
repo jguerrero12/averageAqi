@@ -18,4 +18,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /App
 COPY --from=build-env /App/out .
 ENV DOTNET_EnableDiagnostics=0
-CMD ASPNETCORE_URLS=http://*$PORT dotnet webapp.dll
+# Run the app. CMD is required to run on Heroku
+# $PORT is set by Heroku
+CMD ASPNETCORE_URLS="http://*:$PORT" dotnet webapp.dll
