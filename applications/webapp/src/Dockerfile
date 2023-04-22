@@ -18,4 +18,4 @@ FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /App
 COPY --from=build-env /App/out .
 ENV DOTNET_EnableDiagnostics=0
-ENTRYPOINT ["dotnet", "webapp.dll"]
+ENTRYPOINT ["dotnet", "webapp.dll", "--urls=http://*$PORT"]
