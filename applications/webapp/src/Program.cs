@@ -1,8 +1,26 @@
+using MassTransit;
+using SharedModels;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllersWithViews();
+builder.Services.AddMassTransit(x =>
+    {
+        x.SetKebabCaseEndpointNameFormatter();
+        x.AddRequestClient<GetAverageAqiRequest>(new Uri("exchange:get-average-aqi-request"));
+        x.UsingRabbitMq((context, cfg) =>
+        {
+            cfg.Host("localhost", "/", h =>
+            {
+                h.Username("guest");
+                h.Password("guest");
+            });
+            cfg.ConfigureEndpoints(context);
+        });
+    }
+);
+
 
 var app = builder.Build();
 
