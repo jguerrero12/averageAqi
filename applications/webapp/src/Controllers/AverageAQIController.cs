@@ -8,12 +8,10 @@ namespace webapp.Controllers;
 [Route("[controller]")]
 public class AverageAQIController : ControllerBase
 {
-    private readonly ILogger<AverageAQIController> _logger;
     private readonly IRequestClient<GetAverageAqiRequest> _client;
 
-    public AverageAQIController(ILogger<AverageAQIController> logger, IRequestClient<GetAverageAqiRequest> client)
+    public AverageAQIController(IRequestClient<GetAverageAqiRequest> client)
     {
-        _logger = logger;
         _client = client;
     }
 
