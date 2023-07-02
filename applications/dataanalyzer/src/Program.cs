@@ -1,6 +1,21 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using MassTransit;
+using src;
 
-app.MapGet("/", () => "Hello World!");
+var busControl = Bus.Factory.CreateUsingRabbitMq(cfg =>
+    cfg.ReceiveEndpoint("process-average-aqi-request", e =>
+        {
+            e.Consumer<AverageAQICollectedConsumer>();
+        }
+    )
+);
+await busControl.StartAsync(new CancellationToken());
 
-app.Run();
+try
+{
+    Console.WriteLine("Press enter to exit");
+    await Task.Run(()=>Console.ReadLine());
+}
+finally
+{
+    await busControl.StopAsync();
+}
