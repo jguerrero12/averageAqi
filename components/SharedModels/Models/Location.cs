@@ -2,12 +2,6 @@ namespace SharedModels;
 
 public class Location
 {
-    public float Long { get; }
-    public float Lat { get; }
-
-    public Location(float longitude, float lat)
-    {
-        Long = longitude;
-        Lat = lat;
-    }
+    public float Long { get; set; }
+    public float Lat { get; set; }
 }

@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\components\SharedInfrastructure\SharedInfrastructure.csproj" />
     <ProjectReference Include="..\..\..\components\SharedModels\SharedModels.csproj" />
+    <ProjectReference Include="..\..\dataanalyzer\src\dataanalyzer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
