@@ -1,4 +1,4 @@
-class Location
+export default class Location
 {
     constructor(lat, long)
     {

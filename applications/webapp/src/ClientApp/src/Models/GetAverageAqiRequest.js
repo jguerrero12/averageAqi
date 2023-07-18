@@ -1,4 +1,4 @@
-class GetAverageAqiRequest
+export default class GetAverageAqiRequest
 {
     constructor(dateRange, location)
     {

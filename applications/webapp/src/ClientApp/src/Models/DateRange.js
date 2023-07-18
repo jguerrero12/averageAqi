@@ -1,4 +1,4 @@
-class DateRange
+export default class DateRange
 {
     constructor(start, end)
     {
