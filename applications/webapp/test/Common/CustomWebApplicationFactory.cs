@@ -22,8 +22,8 @@ public class CustomWebApplicationFactory<TProgram>
             services.AddMassTransitTestHarness(
                 x =>
             {
-                x.AddConsumer<AverageAQIRequestedConsumer>().Endpoint(e => e.Name = "average-aqi-requested");
-                x.AddRequestClient<GetAverageAQIController>(new Uri("exchange:average-aqi-requested"));
+                x.AddConsumer<AverageAQIRequestedConsumer>().Endpoint(e => e.Name = "get-average-aqi-request");
+                x.AddRequestClient<GetAverageAqiRequest>(new Uri("exchange:get-average-aqi-request"));
             }
             );
         });
