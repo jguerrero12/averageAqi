@@ -15,7 +15,7 @@ public class AverageAQIController : ControllerBase
         _client = client;
     }
 
-    [HttpGet]
+    [HttpPost]
     public async Task<AqiIndex?> GetAverageAQI(GetAverageAqiRequest data)
     {
         var response = await _client.GetResponse<GetAverageAqiResponse>(data);

@@ -18,7 +18,8 @@ namespace src
             client = new();
             _context = serviceProvider.GetRequiredService<IContext>();
             _reqClient = reqClient;
-            apiKey = Environment.GetEnvironmentVariable("OpenWeatherAPIKey") ?? throw new Exception("OpenWeatherAPIKey not found");
+            apiKey = Environment.GetEnvironmentVariable("OpenWeatherAPIKey") ?? serviceProvider.GetRequiredService<IConfiguration>().GetValue<string>("OpenWeather:apiKey") ??
+            throw new Exception("OpenWeatherAPIKey not found");
         }
         public async Task Consume(ConsumeContext<GetAverageAqiRequest> context)
         {

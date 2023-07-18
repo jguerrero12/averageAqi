@@ -12,6 +12,7 @@ builder.Configuration
 builder.Services.AddMassTransit(x =>
     {
         x.SetKebabCaseEndpointNameFormatter();
+        x.AddConsumer<AverageAQICollectedConsumer>().Endpoint(e => e.Name = "process-average-aqi-request");
         x.AddRequestClient<AverageAQIRequestedConsumer>(new Uri("exchange:process-average-aqi-request"));
         x.UsingRabbitMq((context, cfg) =>
         {

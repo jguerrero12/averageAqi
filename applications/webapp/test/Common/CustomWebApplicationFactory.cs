@@ -7,6 +7,8 @@ using System.Linq;
 using System.Data.Common;
 using System.Net.Http;
 using MassTransit;
+using SharedModels;
+using Mocks;
 
 namespace webAppTests.Common;
 
@@ -17,10 +19,13 @@ public class CustomWebApplicationFactory<TProgram>
     {
         builder.ConfigureServices(services =>
         {
-
-            services.AddMassTransitTestHarness();
-
-
+            services.AddMassTransitTestHarness(
+                x =>
+            {
+                x.AddConsumer<AverageAQIRequestedConsumer>().Endpoint(e => e.Name = "get-average-aqi-request");
+                x.AddRequestClient<GetAverageAqiRequest>(new Uri("exchange:get-average-aqi-request"));
+            }
+            );
         });
 
         builder.UseEnvironment("Development");
