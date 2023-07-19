@@ -66,8 +66,10 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --no-restore
-      - name: Test
+      - name: Test Dotnet
         run: dotnet test --no-build --verbosity normal
+      - name: Test React
+        run: npm run test --prefix ../src/ClientApp
       - name: Deploy
         if: ${{ github.event_name == 'push' }}
         uses: akhileshns/heroku-deploy@v3.12.12

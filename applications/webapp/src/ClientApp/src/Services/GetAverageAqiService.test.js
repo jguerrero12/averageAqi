@@ -2,11 +2,11 @@ import GetAverageAqiService from './GetAverageAqiService';
 import GetAverageAqiRequest from '../Models/GetAverageAqiRequest';
 import DateRange from '../Models/DateRange';
 import Location from '../Models/Location';
+jest.mock('axios');
 import axios from 'axios';
 
-const aqiRes = '14'
-jest.mock('axios')
-axios.get = jest.fn().mockResolvedValue({ data: aqiRes });
+const aqiRes = '14';
+axios.post.mockResolvedValue({ data: aqiRes });
 
 it('gets average aqis', async () => {
     const res = await new GetAverageAqiService().getAverageAqi(
@@ -18,6 +18,6 @@ it('gets average aqis', async () => {
             new Location(39.775379, -86.161407)
         )
     );
-    expect(axios.get).toHaveBeenCalled();
+    expect(axios.post).toHaveBeenCalled();
     expect(res.data).toEqual(aqiRes);
 });
