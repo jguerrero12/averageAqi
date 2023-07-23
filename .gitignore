@@ -233,3 +233,6 @@ _Pvt_Extensions
 
 # Any out folder used for publishing to heroku
 **/out
+
+# Mac folder files
+.DS_Store
