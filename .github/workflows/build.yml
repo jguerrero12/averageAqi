@@ -78,5 +78,4 @@ jobs:
           heroku_app_name: ${{secrets.HEROKU_WEB_APP_NAME}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           usedocker: true
-          appdir: applications/webapp/src
           # healthcheck: "https://webapp-averageaqi.herokuapp.com//health"
